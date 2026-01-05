@@ -106,8 +106,7 @@ elif analysis_mode == "🏭 Sector Analysis":
         'Govt Focus': ['High', 'Medium', 'High', 'High', 'Very High', 'Low', 'Very High', 'Medium']
     })
     
-    st.dataframe(sector_performance.style.background_gradient(subset=['Returns %'], cmap='RdYlGn'), 
-                 use_container_width=True)
+    st.dataframe(sector_performance, use_container_width=True)
     
     # Sector Heatmap
     st.subheader("🔥 Sector Heatmap (Government Focus vs Returns)")
