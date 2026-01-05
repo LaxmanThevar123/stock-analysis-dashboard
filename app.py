@@ -159,10 +159,26 @@ elif analysis_mode == "🏢 Company Analysis":
         'Energy': {'market_cap': '₹18.5L Cr', 'pe': '15.8', 'roe': '14.2%', 'de': '0.42', 'div': '0.8%'}
     }
     
+    # Company-specific metrics
+    company_metrics = {
+        'TCS': {'market_cap': '₹13.2L Cr', 'pe': '25.1', 'roe': '23.5%', 'de': '0.12', 'div': '3.1%'},
+        'Infosys': {'market_cap': '₹7.8L Cr', 'pe': '24.5', 'roe': '21.8%', 'de': '0.18', 'div': '2.5%'},
+        'HDFC Bank': {'market_cap': '₹9.2L Cr', 'pe': '17.2', 'roe': '16.5%', 'de': '1.8', 'div': '3.5%'},
+        'ICICI Bank': {'market_cap': '₹8.6L Cr', 'pe': '15.8', 'roe': '15.1%', 'de': '2.4', 'div': '2.9%'},
+        'Sun Pharma': {'market_cap': '₹6.5L Cr', 'pe': '29.2', 'roe': '19.1%', 'de': '0.22', 'div': '1.8%'},
+        'Dr Reddy': {'market_cap': '₹5.9L Cr', 'pe': '28.6', 'roe': '17.9%', 'de': '0.28', 'div': '1.2%'},
+        'Tata Motors': {'market_cap': '₹5.1L Cr', 'pe': '23.5', 'roe': '17.2%', 'de': '0.72', 'div': '1.8%'},
+        'M&M': {'market_cap': '₹4.5L Cr', 'pe': '20.7', 'roe': '15.2%', 'de': '0.58', 'div': '2.4%'},
+        'L&T': {'market_cap': '₹17.2L Cr', 'pe': '27.1', 'roe': '20.1%', 'de': '0.35', 'div': '2.3%'},
+        'UltraTech': {'market_cap': '₹16.4L Cr', 'pe': '25.3', 'roe': '18.9%', 'de': '0.41', 'div': '1.9%'},
+        'Reliance Industries': {'market_cap': '₹19.1L Cr', 'pe': '16.2', 'roe': '14.8%', 'de': '0.39', 'div': '0.9%'},
+        'ONGC': {'market_cap': '₹17.9L Cr', 'pe': '15.4', 'roe': '13.6%', 'de': '0.45', 'div': '0.7%'}
+    }
+    
     st.markdown("---")
     
     # Company Metrics
-    metrics = sector_metrics[sector]
+    metrics = company_metrics.get(company, sector_metrics[sector])
     col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
         st.metric("Market Cap", metrics['market_cap'])
